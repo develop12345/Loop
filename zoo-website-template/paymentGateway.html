@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+        <div class="checkout-heading">Checkout</div>
+        <div class="appointment-timer"></div>
+   <div class="payment-main-container">
+    <div class="payment-left">
+        <div class="contact-info-container">
+            <div class="contact-info">Contact info</div>
+             <div class="contact-group">
+        <select id="country-code" name="country-code">
+          <option value="+1">+1 USA</option>
+          <option value="+91">+91 India</option>
+          <option value="+44">+44 UK</option>
+          <option value="+61">+61 Australia</option>
+          <option value="+81">+81 Japan</option>
+          <!-- Add more country codes as needed -->
+        </select>
+        <input type="tel" id="phone-number" name="phone-number" placeholder="Enter phone number" required>
+      </div>
+    </div>
+      <hr class="line">
+        <!-- First Name and Last Name side by side -->
+      <div class="name-group">
+        <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
+        <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+      </div>
+
+      <!-- Email input field below -->
+      <div class="email-group">
+        <input type="email" id="email" name="email" placeholder="Email Address" required>
+      </div>
+
+     <hr class="line">
+      <!-- Address Fields -->
+      <div class="address-group">
+        <div class="address-head">Address</div>
+      </div>
+      <div class="city-state-group">
+        <input type="text" id="city" name="city" placeholder="City" required>
+        <input type="text" id="state" name="state" placeholder="State" required>
+      </div>
+  
+      <!-- Full Address -->
+    <div class="full-address-group">
+        <input type="text" id="full-address" name="full-address" placeholder="Full Address" required>
+      </div>
+  
+      <hr class="line">
+       <!-- Secure Appointment Section -->
+    <h3 class="secure-appointment">Secure Appointment</h3>
+
+    <p class="secure-text">A credit or debit card is required to book and may be charged in the case of a late cancellation. Protected and encrypted.</p>
+
+    <!-- Card Payment Fields -->
+    <div class="payment-section">
+    <i class="fa fa-credit-card" style="font-size:36px"></i>
+      <input type="text" id="card-number" name="card-number" placeholder="Card Number" required>
+      <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+      <input type="text" id="cvv" name="cvv" placeholder="CVV" required>
+    </div>
+
+      
+        </div>
+    </div>
+</body>
+</html>
+
