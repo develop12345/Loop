@@ -106,6 +106,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Select the "Book Appointment" button
     const bookBtn = document.querySelector(".book-btn");
+    console.log("we entered")
 
     // When the button is clicked
     bookBtn.addEventListener("click", function(event) {
@@ -120,6 +121,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const expiry = document.getElementById("expiry").value;
         const cvv = document.getElementById("cvv").value;
 
+        console.log(firstName, lastName, email, phoneNumber, cardNumber, expiry, cvv);
         // Prepare the data to be sent
         const templateParams = {
             first_name: firstName,

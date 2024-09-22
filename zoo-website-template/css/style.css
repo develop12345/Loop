@@ -597,6 +597,10 @@
     font-family: Arial, sans-serif;
 }
 
+.swal2-html-container{
+    font-family: Arial, sans-serif;
+}
+
 .contact-info, .address-head, .secure-appointment{
     font-size: 19px;
     font-weight: 600;
@@ -665,6 +669,353 @@
     text-align: center;
 }
 #first-name, #last-name, #email, #city, #state, #full-address{
+    width: 100%;
+    border: 1px solid rgb(189, 187, 187);
+    border-radius: 8px;
+    padding: 18px;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+.line{
+    margin: 20px 0px;
+}
+
+.email-group, .full-address-group{
+    margin: 20px 0px;
+}
+
+.checkbox-container {
+    margin-top: 40px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    user-select: none;
+    font-size: 20px; 
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #f4f4f4;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+/* When the checkbox is checked */
+.custom-checkbox input:checked ~ .checkmark {
+    background-color: black;
+    border-color: black;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* The checkmark (tick) */
+.custom-checkbox .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+
+/** payment gateway 2
+
+/* Payment Gateway CSS..........  */
+  
+.payment-main-container{
+    display: flex;
+    padding: 40px;
+    gap: 80px;
+    width: 80%;
+    margin-left: 10%;
+    font-family: Arial, sans-serif;
+}
+.checkout-heading{
+    font-size: 19px;
+    text-align: center;
+    font-weight: 400;
+    font-family: Arial, sans-serif;
+}
+
+.swal2-html-container{
+    font-family: Arial, sans-serif;
+}
+
+.contact-info, .address-head, .secure-appointment{
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+#country-code2, #phone-number2{
+
+    padding: 8px;
+    border: none;
+    font-size: 18px;
+}
+.payment-left{
+    width: 60%;
+}
+
+#card-number2,  #cvv2, #expiry2{
+    padding: 8px;
+    border: none;
+   
+}
+
+.contact-group, .payment-section{
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: nowrap;
+
+}
+
+.payment-section{
+    display: flex;
+    align-items: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+#phone-number2{
+    flex: 7;
+}
+#country-code2{
+    flex: 1;
+}
+
+.cancellation-policy{
+    font-family: Arial, sans-serif;
+}
+
+.sub-text{
+    color: rgb(112, 112, 112);
+}
+
+#country-code2:focus, #phone-number2:focus, #card-number2:focus, #expiry2:focus,  #cvv2:focus{
+
+    outline: none;
+}
+.name-group, .city-state-group{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.center-text{
+    text-align: center;
+}
+#first-name2, #last-name2, #email2, #city2, #state2, #full-address2{
+    width: 100%;
+    border: 1px solid rgb(189, 187, 187);
+    border-radius: 8px;
+    padding: 18px;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+.line{
+    margin: 20px 0px;
+}
+
+.email-group, .full-address-group{
+    margin: 20px 0px;
+}
+
+.checkbox-container {
+    margin-top: 40px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    user-select: none;
+    font-size: 20px; 
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #f4f4f4;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+/* When the checkbox is checked */
+.custom-checkbox input:checked ~ .checkmark {
+    background-color: black;
+    border-color: black;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* The checkmark (tick) */
+.custom-checkbox .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/** payment gateway 3
+
+/* Payment Gateway CSS..........  */
+  
+.payment-main-container{
+    display: flex;
+    padding: 40px;
+    gap: 80px;
+    width: 80%;
+    margin-left: 10%;
+    font-family: Arial, sans-serif;
+}
+.checkout-heading{
+    font-size: 19px;
+    text-align: center;
+    font-weight: 400;
+    font-family: Arial, sans-serif;
+}
+
+.swal2-html-container{
+    font-family: Arial, sans-serif;
+}
+
+.contact-info, .address-head, .secure-appointment{
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+#country-code3, #phone-number3{
+
+    padding: 8px;
+    border: none;
+    font-size: 18px;
+}
+.payment-left{
+    width: 60%;
+}
+
+#card-number3,  #cvv3, #expiry3{
+    padding: 8px;
+    border: none;
+   
+}
+
+.contact-group, .payment-section{
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: nowrap;
+
+}
+
+.payment-section{
+    display: flex;
+    align-items: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+#phone-number3{
+    flex: 7;
+}
+#country-code3{
+    flex: 1;
+}
+
+.cancellation-policy{
+    font-family: Arial, sans-serif;
+}
+
+.sub-text{
+    color: rgb(112, 112, 112);
+}
+
+#country-code3:focus, #phone-number3:focus, #card-number3:focus, #expiry3:focus,  #cvv3:focus{
+
+    outline: none;
+}
+.name-group, .city-state-group{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.center-text{
+    text-align: center;
+}
+#first-name3, #last-name3, #email3, #city3, #state3, #full-address3{
     width: 100%;
     border: 1px solid rgb(189, 187, 187);
     border-radius: 8px;
