@@ -585,15 +585,16 @@
 .payment-main-container{
     display: flex;
     padding: 40px;
-    gap: 20px;
-    max-width: 1024px;
-    justify-content: center;
-    align-items: center;
+    gap: 80px;
+    width: 80%;
+    margin-left: 10%;
+    font-family: Arial, sans-serif;
 }
 .checkout-heading{
     font-size: 19px;
     text-align: center;
     font-weight: 400;
+    font-family: Arial, sans-serif;
 }
 
 .contact-info, .address-head, .secure-appointment{
@@ -629,9 +630,10 @@
 
 .payment-section{
     display: flex;
+    align-items: flex-start;
     align-items: center;
-    justify-content: center;
     box-sizing: border-box;
+    justify-content: space-between;
 }
 
 #phone-number{
@@ -639,6 +641,14 @@
 }
 #country-code{
     flex: 1;
+}
+
+.cancellation-policy{
+    font-family: Arial, sans-serif;
+}
+
+.sub-text{
+    color: rgb(112, 112, 112);
 }
 
 #country-code:focus, #phone-number:focus, #card-number:focus, #expiry:focus,  #cvv:focus{
@@ -651,6 +661,9 @@
     gap: 10px;
 }
 
+.center-text{
+    text-align: center;
+}
 #first-name, #last-name, #email, #city, #state, #full-address{
     width: 100%;
     border: 1px solid rgb(189, 187, 187);
@@ -666,4 +679,70 @@
 
 .email-group, .full-address-group{
     margin: 20px 0px;
+}
+
+.checkbox-container {
+    margin-top: 40px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    user-select: none;
+    font-size: 20px; 
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #f4f4f4;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+/* When the checkbox is checked */
+.custom-checkbox input:checked ~ .checkmark {
+    background-color: black;
+    border-color: black;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* The checkmark (tick) */
+.custom-checkbox .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
 }

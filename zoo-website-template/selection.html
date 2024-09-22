@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Selector</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div id="page1" class="page">
+        <div class="container">
+            <div class="left">
+                <div class="option" onclick="selectOption('1-hour session for group 2-5 people - $295.00 ・ 1 hr', 295)">
+                    1-hour session for group 2-5 people <br> $295.00 ・ 1 hr
+                </div>
+                <hr>
+                <div class="option" onclick="selectOption('2-hour session for group 2-5 people - $495.00 ・ 2 hrs', 495)">
+                    2-hour session for group 2-5 people <br> $495.00 ・ 2 hrs
+                </div>
+                <hr>
+                <div class="option" onclick="selectOption('3-hour session for group 2-5 people - $695.00 ・ 3 hrs', 695)">
+                    3-hour session for group 2-5 people <br> $695.00 ・ 3 hrs
+                </div>
+                <hr>
+                <div class="option" onclick="selectOption('4-hour session for group 2-5 people - $895.00 ・ 4 hrs', 895)">
+                    4-hour session for group 2-5 people <br> $895.00 ・ 4 hrs
+                </div>
+            </div>
+            <div class="right">
+                <div id="selectedItems">
+                    <h3>Selected Sessions</h3>
+                </div>
+                <button onclick="removeAll()">Remove All</button>
+                <button onclick="nextPage()">Next Page</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div id="page2" class="page hidden">
+        <div class="container">
+            <div class="left">
+                <h3>Your Selections</h3>
+                <div id="cardSection"></div>
+            </div>
+            <div class="right">
+                <h3>Order Summary</h3>
+                <div id="summary"></div>
+                <p>Total Price: $<span id="totalPrice">0</span></p>
+                <button onclick="goBack()">Go Back</button>
+            </div>
+        </div>
+    </div> -->
+
+    <script src="js/select.js"></script>
+</body>
+</html>
